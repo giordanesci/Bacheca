@@ -21,7 +21,7 @@
 
 const PHOTOS = [
   {
-    src: "/photos/DSC_3747.JPG",
+    src: "photos/DSC_3747.JPG",
     alt: "Nepal 111",
     category: "alpinismo",
     location: "nepal",
