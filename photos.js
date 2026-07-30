@@ -21,7 +21,7 @@
 
 const PHOTOS = [
   {
-    src: "photos/DSC_0805.NEF",
+    src: "photos/DSC_3747.JPG",
     alt: "Nepal 111",
     category: "alpinismo",
     location: "nepal",
@@ -35,61 +35,5 @@ const PHOTOS = [
     location: "Siargao",
     stat: "",
     date: "Giu 2026"
-  },
-  {
-    src: "https://picsum.photos/seed/apoisland1/800/1000",
-    alt: "Barriera corallina",
-    category: "immersioni",
-    location: "Apo Island",
-    stat: "-22 m",
-    date: "Giu 2026"
-  },
-  {
-    src: "https://picsum.photos/seed/grivola1/900/650",
-    alt: "Ghiacciaio sospeso",
-    category: "alpinismo",
-    location: "Grivola",
-    stat: "3969 m",
-    date: "Lug 2026"
-  },
-  {
-    src: "https://picsum.photos/seed/elnido1/800/1050",
-    alt: "Falesie calcaree",
-    category: "viaggi",
-    location: "El Nido",
-    stat: "",
-    date: "Lug 2026"
-  },
-  {
-    src: "https://picsum.photos/seed/malapascua1/900/720",
-    alt: "Squalo volpe all'alba",
-    category: "immersioni",
-    location: "Malapascua",
-    stat: "-28 m",
-    date: "Giu 2026"
-  },
-  {
-    src: "https://picsum.photos/seed/granparadiso1/800/1000",
-    alt: "Nevaio in quota",
-    category: "alpinismo",
-    location: "Gran Paradiso",
-    stat: "4061 m",
-    date: "Set 2025"
-  },
-  {
-    src: "https://picsum.photos/seed/siquijor1/900/680",
-    alt: "Acqua turchese",
-    category: "viaggi",
-    location: "Siquijor",
-    stat: "",
-    date: "Giu 2026"
-  },
-  {
-    src: "https://picsum.photos/seed/lyskamm1/800/1080",
-    alt: "Cresta esposta",
-    category: "alpinismo",
-    location: "Cresta Est del Lyskamm",
-    stat: "4527 m",
-    date: "Lug 2025"
   }
 ];
