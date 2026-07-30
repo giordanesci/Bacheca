@@ -21,12 +21,12 @@
 
 const PHOTOS = [
   {
-    src: "https://picsum.photos/seed/monviso1/800/1100",
-    alt: "Cresta rocciosa all'alba",
+    src: "photos/DSC_0805.NEF",
+    alt: "Nepal 111",
     category: "alpinismo",
-    location: "Monviso",
+    location: "nepal",
     stat: "3841 m",
-    date: "Ago 2026"
+    date: "Sep 2022"
   },
   {
     src: "https://picsum.photos/seed/siargao1/900/700",
