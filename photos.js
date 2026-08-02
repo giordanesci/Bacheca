@@ -29,11 +29,11 @@ const PHOTOS = [
     date: "Sep 2022"
   },
   {
-    src: "https://picsum.photos/seed/siargao1/900/700",
-    alt: "Barangkas al tramonto",
+    src: "photos/img_0001.jpg",
+    alt: "Tengboche",
     category: "viaggi",
-    location: "Siargao",
-    stat: "",
-    date: "Giu 2026"
+    location: "Nepal",
+    stat: "3867 m",
+    date: "Sep 2022"
   }
 ];
