@@ -36,4 +36,20 @@ const PHOTOS = [
     stat: "3867 m",
     date: "Sep 2022"
   }
+  {
+    src: "photos/Lobuche2Stacked.jpg",
+    alt: "Lobuche",
+    category: "viaggi",
+    location: "Nepal",
+    stat: "4940 m",
+    date: "Sep 2022"
+  }
+{
+    src: "photos/Photoshopplanetrails.jpg",
+    alt: "Dolomiti del Brenta",
+    category: "viaggi",
+    location: "Rifugio Alimonta",
+    stat: "2600 m",
+    date: "Aug 2022"
+  }
 ];
