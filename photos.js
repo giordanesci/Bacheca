@@ -35,7 +35,7 @@ const PHOTOS = [
     location: "Nepal",
     stat: "3867 m",
     date: "Sep 2022"
-  }
+  },
   {
     src: "photos/Lobuche2Stacked.jpg",
     alt: "Lobuche",
@@ -43,7 +43,7 @@ const PHOTOS = [
     location: "Nepal",
     stat: "4940 m",
     date: "Sep 2022"
-  }
+  },
 {
     src: "photos/Photoshopplanetrails.jpg",
     alt: "Dolomiti del Brenta",
