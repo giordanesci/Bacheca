@@ -1,7 +1,9 @@
 (function(){
-  const board = document.getElementById('board');
-  const heroImg = document.getElementById('heroImg');
-  const filters = document.getElementById('filters');
+  const stream = document.getElementById('stream');
+  const navlinks = document.querySelectorAll('.navlink[data-filter]');
+  const burger = document.getElementById('burger');
+  const nav = document.querySelector('.topbar__nav');
+
   const lightbox = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
   const lbCaption = document.getElementById('lbCaption');
@@ -9,61 +11,79 @@
   const lbPrev = document.getElementById('lbPrev');
   const lbNext = document.getElementById('lbNext');
 
-  let currentIndex = 0;
   let activeFilter = 'all';
-
-  // Hero usa la prima foto come sfondo
-  if (PHOTOS.length){
-    heroImg.src = PHOTOS[0].src;
-    heroImg.alt = PHOTOS[0].alt;
-  }
+  let currentIndex = 0;
+  let observer = null;
 
   function visiblePhotos(){
-    return PHOTOS.filter(p => activeFilter === 'all' || p.category === activeFilter);
+    return PHOTOS
+      .map((p, i) => ({ ...p, _index: i }))
+      .filter(p => activeFilter === 'all' || p.category === activeFilter);
   }
 
   function render(){
-    board.innerHTML = '';
-    PHOTOS.forEach((photo, i) => {
-      const card = document.createElement('article');
-      card.className = 'card';
-      card.dataset.category = photo.category;
-      card.dataset.index = i;
-      card.tabIndex = 0;
+    if (observer) observer.disconnect();
+    stream.innerHTML = '';
 
-      if (activeFilter !== 'all' && photo.category !== activeFilter){
-        card.classList.add('is-hidden');
-      }
+    const items = visiblePhotos();
 
-      card.innerHTML = `
-        <img src="${photo.src}" alt="${photo.alt}" loading="lazy">
-        <div class="card__caption">
-          <p class="card__location">${photo.location}</p>
-          <p class="card__meta">
-            ${photo.stat ? `<span>${photo.stat}</span>` : ''}
-            <span>${photo.date}</span>
-          </p>
+    if (!items.length){
+      const empty = document.createElement('p');
+      empty.className = 'stream__empty';
+      empty.textContent = 'Ancora nessuna foto in questa categoria.';
+      stream.appendChild(empty);
+      return;
+    }
+
+    items.forEach(photo => {
+      const frame = document.createElement('figure');
+      frame.className = 'frame';
+      frame.dataset.index = photo._index;
+
+      frame.innerHTML = `
+        <div class="frame__figure">
+          <img src="${photo.src}" alt="${photo.alt}" loading="lazy">
+          <figcaption class="frame__caption">
+            <span>${photo.location}</span>
+            <span>${photo.stat ? photo.stat + ' — ' : ''}${photo.date}</span>
+          </figcaption>
         </div>
       `;
 
-      card.addEventListener('click', () => openLightbox(i));
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' '){
-          e.preventDefault();
-          openLightbox(i);
-        }
-      });
-
-      board.appendChild(card);
+      frame.querySelector('img').addEventListener('click', () => openLightbox(photo._index));
+      stream.appendChild(frame);
     });
+
+    setupObserver();
   }
 
-  filters.addEventListener('click', (e) => {
-    const btn = e.target.closest('.filter');
-    if (!btn) return;
-    activeFilter = btn.dataset.filter;
-    filters.querySelectorAll('.filter').forEach(f => f.classList.toggle('is-active', f === btn));
-    render();
+  function setupObserver(){
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.frame__figure').forEach(el => observer.observe(el));
+  }
+
+  navlinks.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeFilter = btn.dataset.filter;
+      navlinks.forEach(f => f.classList.toggle('is-active', f === btn));
+      render();
+      nav.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(open));
   });
 
   function openLightbox(index){
@@ -84,7 +104,7 @@
     const photo = PHOTOS[currentIndex];
     lbImg.src = photo.src;
     lbImg.alt = photo.alt;
-    lbCaption.innerHTML = `<em>${photo.location}</em>${photo.stat ? photo.stat + ' · ' : ''}${photo.date}`;
+    lbCaption.textContent = `${photo.location}${photo.stat ? ' — ' + photo.stat : ''} — ${photo.date}`;
   }
 
   function step(dir){

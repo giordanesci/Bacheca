@@ -22,16 +22,16 @@
 const PHOTOS = [
   {
     src: "photos/DSC_3747.JPG",
-    alt: "Nepal 111",
-    category: "alpinismo",
+    alt: "Valle del Lys",
+    category: "sky",
     location: "nepal",
-    stat: "3841 m",
-    date: "Sep 2022"
+    stat: "2900 m",
+    date: "Aug 2022"
   },
   {
     src: "photos/img_0001.jpg",
     alt: "Tengboche",
-    category: "viaggi",
+    category: "heart",
     location: "Nepal",
     stat: "3867 m",
     date: "Sep 2022"
@@ -39,7 +39,7 @@ const PHOTOS = [
   {
     src: "photos/Lobuche2Stacked.jpg",
     alt: "Lobuche",
-    category: "viaggi",
+    category: "water",
     location: "Nepal",
     stat: "4940 m",
     date: "Sep 2022"
@@ -47,7 +47,7 @@ const PHOTOS = [
 {
     src: "photos/Photoshopplanetrails.jpg",
     alt: "Dolomiti del Brenta",
-    category: "viaggi",
+    category: "sky",
     location: "Rifugio Alimonta",
     stat: "2600 m",
     date: "Aug 2022"
