@@ -1,6 +1,6 @@
 # Bacheca
 
-Sito fotografico statico, pronto per GitHub Pages.
+Sito fotografico statico, pronto per GitHub Pages. Nessuna build, nessuna dipendenza da installare.
 
 ## Struttura
 

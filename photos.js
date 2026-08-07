@@ -4,7 +4,7 @@
 
   src:      percorso del file (mettilo dentro la cartella /photos)
   alt:      breve descrizione (per accessibilità)
-  category: "alpinismo" | "immersioni" | "viaggi"
+  category: "sky" | "heart" | "water"
   location: dove è stata scattata
   stat:     quota o profondità, es. "3841 m" oppure "-18 m"
   date:     mese e anno, es. "Lug 2026"
@@ -14,8 +14,8 @@
   2. Cambia "src" con "photos/nome-del-file.jpg"
   3. Aggiorna gli altri campi
 
-  Le immagini più "alte" (portrait) creano più varietà nel
-  layout a mosaico — non serve ridimensionarle a mano.
+  L'ordine in questo elenco è l'ordine in cui le foto scorrono
+  sul sito, dall'alto verso il basso.
   ==========================================================
 */
 
@@ -24,9 +24,9 @@ const PHOTOS = [
     src: "photos/DSC_3747.JPG",
     alt: "Valle del Lys",
     category: "sky",
-    location: "nepal",
+    location: "Nepal",
     stat: "2900 m",
-    date: "Aug 2022"
+    date: "Ago 2022"
   },
   {
     src: "photos/img_0001.jpg",
@@ -34,7 +34,7 @@ const PHOTOS = [
     category: "heart",
     location: "Nepal",
     stat: "3867 m",
-    date: "Sep 2022"
+    date: "Set 2022"
   },
   {
     src: "photos/Lobuche2Stacked.jpg",
@@ -42,14 +42,14 @@ const PHOTOS = [
     category: "water",
     location: "Nepal",
     stat: "4940 m",
-    date: "Sep 2022"
+    date: "Set 2022"
   },
-{
+  {
     src: "photos/Photoshopplanetrails.jpg",
     alt: "Dolomiti del Brenta",
     category: "sky",
     location: "Rifugio Alimonta",
     stat: "2600 m",
-    date: "Aug 2022"
+    date: "Ago 2022"
   }
 ];

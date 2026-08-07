@@ -3,48 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giordano — Bacheca</title>
+<title>Giordano</title>
 <meta name="description" content="Fotografie di montagna, mare e altrove.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero" id="hero">
-  <img class="hero__img" id="heroImg" src="" alt="">
-  <svg class="hero__profile" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
-    <polyline id="profileLine" points="0,55 90,40 180,48 260,15 340,30 430,8 520,25 610,12 700,38 790,20 880,45 1000,32" />
-  </svg>
-  <div class="hero__content">
-    <p class="eyebrow">Giordano · quota &amp; profondità</p>
-    <h1>Bacheca</h1>
-    <p class="hero__sub">Una raccolta di scatti da montagna, mare e in mezzo — senza la compressione di Instagram.</p>
+<div class="topbar">
+  <a class="topbar__name" href="#top">Giordano</a>
+  <nav class="topbar__nav" aria-label="Categorie">
+    <button class="navlink is-active" data-filter="all">Tutte</button>
+    <button class="navlink" data-filter="sky">Sky</button>
+    <button class="navlink" data-filter="heart">Heart</button>
+    <button class="navlink" data-filter="water">Water</button>
+    <a class="navlink" href="#about">About</a>
+  </nav>
+  <button class="topbar__burger" id="burger" aria-label="Apri il menu" aria-expanded="false">Menu</button>
+</div>
+
+<a id="top"></a>
+
+<main class="stream" id="stream"></main>
+
+<section class="about" id="about">
+  <div class="about__inner">
+    <p class="about__kicker">About</p>
+    <h2 class="about__title">Giordano</h2>
+    <p class="about__text">Ingegnere aerospaziale, alpinista, sub. Vivo a Torino e passo il tempo libero in quota o sott'acqua, con una fotocamera dietro.</p>
+    <a class="about__link" href="https://instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
   </div>
-  <a class="scroll-cue" href="#board" aria-label="Vai alla galleria">↓</a>
-</header>
-
-<nav class="filters" id="filters" aria-label="Filtra per categoria">
-  <button class="filter is-active" data-filter="all">Tutte</button>
-  <button class="filter" data-filter="alpinismo">Alpinismo</button>
-  <button class="filter" data-filter="immersioni">Immersioni</button>
-  <button class="filter" data-filter="viaggi">Viaggi</button>
-</nav>
-
-<main class="board" id="board"></main>
-
-<svg class="divider" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
-  <polyline points="0,20 90,38 180,10 260,42 340,25 430,50 520,18 610,35 700,8 790,30 880,15 1000,28" />
-</svg>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <p class="footer__name">Giordano</p>
-    <p class="footer__bio">Alpinismo, immersioni, e quello che ci sta in mezzo. Torino, base camp.</p>
-    <a class="footer__link" href="https://instagram.com/" target="_blank" rel="noopener">Seguimi su Instagram ↗</a>
-  </div>
-</footer>
+</section>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
   <button class="lightbox__close" id="lbClose" aria-label="Chiudi">✕</button>
